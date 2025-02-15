@@ -17,7 +17,7 @@ import MyPackage from './components/MyPackage.vue';
   <!-- <HelloWorld msg="Vite + Vue" /> -->
   <!-- <Test/> -->
    <MyPackage />
-   
+  
 
 </template>
 
