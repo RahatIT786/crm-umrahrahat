@@ -1,20 +1,24 @@
 <template>
-<div class="row">
-    <CountLabel :count="Visitors" />
-<CountLabel :count="Visitors" />
-<CountLabel :count="Visitors" />
-</div>
+
+<!-- <CountLabel :count="1294" /> -->
+     <DefaultLayout  />
+
 </template>
 <script>
 import CountLabel from '../components/ui/CountLabel.vue';
+import DefaultLayout from '../layouts/DefaultLayout.vue';
 
-
-export default{
-    components:{CountLabel},
-    data(){
-        return{
-            Visitors:1294,
-        }
-    }
+// export default{
+//     components:{CountLabel},
+//     data(){
+//         return{
+//             Visitors:1294,
+//         }
+//     }
+// }
+export default {
+  components: {
+    DefaultLayout
+  }
 }
 </script>

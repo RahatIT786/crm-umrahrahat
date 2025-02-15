@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h2>Packages</h2>
+      <h2>Package</h2>
       <ul>
         <li v-for="pkg in packageList" :key="pkg.id">
           {{ pkg.name }} - ${{ pkg.price }}
