@@ -2,22 +2,14 @@
 // import HelloWorld from './components/HelloWorld.vue';
 // import Test from './components/Test.vue';
 import MyPackage from './components/MyPackage.vue';
+import Dashboard from './pages/Dashboard.vue';
 
 </script>
 
 <template>
-  <div>
-    <a  target="_blank">
-      <img src="/src/assets/images/siteMaintanance.jpg" class="logo" alt="Vite logo" />
-    </a>
-    <!-- <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a> -->
-    <h5 class="title">SITE UNDER MAINTANANCE</h5>
-  </div>
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <!-- <Test/> -->
-   <!-- <MyPackage /> -->
+  
+  
+    <router-view />
    
 
 </template>
