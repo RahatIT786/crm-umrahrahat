@@ -1,5 +1,9 @@
 <template>
-<CountLabel :count="1294" />
+<div class="row">
+    <CountLabel :count="Visitors" />
+<CountLabel :count="Visitors" />
+<CountLabel :count="Visitors" />
+</div>
 </template>
 <script>
 import CountLabel from '../components/ui/CountLabel.vue';
