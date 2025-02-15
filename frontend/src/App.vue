@@ -7,11 +7,8 @@ import Dashboard from './pages/Dashboard.vue';
 </script>
 
 <template>
-  
-  
+
     <router-view />
    
-
-
 </template>
 
