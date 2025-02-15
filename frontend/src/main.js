@@ -10,6 +10,10 @@ import './assets/script/core/popper.min.js'
 import './assets/script/kaiadmin.js'
 import './assets/script/setting-demo.js'
 import './assets/script/setting-demo2.js'
+// import './assets/script/plugin/jquery-scrollbar/jquery.scrollbar.min.js'
+// import './assets/script/plugin/chart.js/chart.min.js'
+// import './assets/script/plugin/jquery.sparkline/jquery.sparkline.min.js'
+// import './assets/script/plugin/bootstrap-notify/bootstrap-notify.min.js'
 
 
 
