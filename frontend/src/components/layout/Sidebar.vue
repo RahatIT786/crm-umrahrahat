@@ -41,6 +41,32 @@
     
               </li>
               <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#CM">
+                  <i class="fas fa-layer-group"></i>
+                  <p>Company Management</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="CM">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a >
+                        <span class="sub-item">Branches</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="sub-item">Bank Accounts</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a >
+                        <span class="sub-item">GST</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
                 <a data-bs-toggle="collapse">
                   <i class="fas fa-layer-group"></i>
                   <p>Agent Management</p>
@@ -282,32 +308,7 @@
                 </div>
               </li>
 
-              <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#CM">
-                  <i class="fas fa-layer-group"></i>
-                  <p>Company Management</p>
-                  <span class="caret"></span>
-                </a>
-                <div class="collapse" id="CM">
-                  <ul class="nav nav-collapse">
-                    <li>
-                      <a >
-                        <span class="sub-item">Branches</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="sub-item">Bank Accounts</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a >
-                        <span class="sub-item">GST</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+
 
               <li class="nav-item">
                 <a data-bs-toggle="collapse">
