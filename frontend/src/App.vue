@@ -24,7 +24,7 @@ import MyPackage from './components/MyPackage.vue';
 
 <style scoped>
 .logo {
-  height: 60vw;
+  height: 40vw;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
