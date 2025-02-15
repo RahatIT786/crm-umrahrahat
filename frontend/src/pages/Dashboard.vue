@@ -1,6 +1,8 @@
 <template>
+
 <!-- <CountLabel :count="1294" /> -->
      <DefaultLayout  />
+
 </template>
 <script>
 import CountLabel from '../components/ui/CountLabel.vue';
