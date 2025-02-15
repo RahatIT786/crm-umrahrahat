@@ -1,10 +1,17 @@
 <script setup>
-import Sidebar from './components/layout/Sidebar.vue';
-import Navbar from './components/layout/Navbar.vue';
+
+
+import MyPackage from './components/MyPackage.vue';
+import Dashboard from './pages/Dashboard.vue';
+
 </script>
 
 <template>
-  <Navbar />
-  <Sidebar />
+  
+  
+    <router-view />
+   
+
+
 </template>
 
