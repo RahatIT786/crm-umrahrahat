@@ -12,7 +12,7 @@
                 </div>
                 <Navbar />
             </div>
-           
+            <!-- <router-view /> -->
             <FooterBottom />
         </div>
         
