@@ -1,14 +1,13 @@
 <script setup>
+import DefaultLayout from './layouts/DefaultLayout.vue';
 
 
-import MyPackage from './components/MyPackage.vue';
-import Dashboard from './pages/Dashboard.vue';
 
 </script>
 
 <template>
 
-    <router-view />
+   <DefaultLayout />
    
 </template>
 
