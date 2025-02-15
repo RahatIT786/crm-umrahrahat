@@ -16,7 +16,7 @@
             </nav>
             <div class="copyright">
               2025, made with <i class="fa fa-heart heart text-danger"></i> by
-              <a href="https://www.rahatitsolutions.com/">Rahat IT Solutions</a>
+              <a href="https://www.rahatitsolutions.com/" target="_blank">Rahat IT Solutions</a>
             </div>
        
           </div>
