@@ -1,3 +1,15 @@
+@import url('/src/assets/css/bootstrap.min.css');
+@import url('/src/assets/css/demo.css');
+/* @import url('/src/assets/css/demo.css.map'); */
+@import url('/src/assets/css/fonts.css');
+@import url('/src/assets/css/kaiadmin.css');
+/* @import url('/src/assets/css/kaiadmin.css.map'); */
+@import url('/src/assets/css/kaiadmin.min.css');
+@import url('/src/assets/css/plugins.css');
+/* @import url('/src/assets/css/plugins.css.map'); */
+@import url('/src/assets/css/plugins.min.css');
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
