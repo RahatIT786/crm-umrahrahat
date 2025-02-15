@@ -1,4 +1,6 @@
 <script setup>
+import DefaultLayout from './layouts/DefaultLayout.vue';
+
 
 
 import Sidebar from './components/layout/Sidebar.vue';
