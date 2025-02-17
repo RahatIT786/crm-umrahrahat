@@ -1,5 +1,5 @@
 import React from 'react'
-
+// import RahatLogo from '../../../public/assets/images/rahat_logo.png';
 const sidebar = () => {
   return (
  
@@ -9,7 +9,7 @@ const sidebar = () => {
           <div className="logo-header" data-background-color="dark">
             <a href="" className="logo">
               <img
-                src=""
+                // src={RahatLogo}
                 alt="navbar brand"
                 className="navbar-brand"
                 height="80px"
