@@ -1,6 +1,7 @@
 {
   "name": "demoapp",
   "version": "0.1.0",
+  "homepage": "/frontend",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
