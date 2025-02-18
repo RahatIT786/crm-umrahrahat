@@ -1,5 +1,6 @@
 import React from 'react'
-import CountLabel from '../components/ui/CountLabel'
+import CountLabel from '../components/ui/CountLabel';
+
 const Home = () => {
   return (
     <div className="container">
@@ -22,6 +23,10 @@ const Home = () => {
               <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
               <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
             </div>
+            
+          
+       
+
            
           </div>
         </div>
