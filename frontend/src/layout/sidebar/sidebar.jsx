@@ -1,60 +1,100 @@
-import React from 'react'
-// import RahatLogo from '../../../public/assets/images/rahat_logo.png';
-const sidebar = () => {
-  return (
+import React, { useState } from 'react';
+import RahatLogo from '../../assets/img/rahat_logo.png';
+
+const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
+  // State to manage the collapse of sections
+  const [isDashboardOpen, setDashboardOpen] = useState(false);
+  const [isCompanyManagementOpen, setCompanyManagementOpen] = useState(false);
+  const [isStaffManagementOpen, setStaffManagementOpen] = useState(false);
+  const [isFinanceManagementOpen, setFinanceManagementOpen] = useState(false);
+  const [isInventory, setInventory] = useState(false);
+  const [isService, setService] = useState(false);
+  const [isSiteSettings, setSiteSettings] = useState(false);
+  const [isGlobalSettings, setGlobalSettings] = useState(false);
+  const toggleDashboard = () => {
+    setDashboardOpen(!isDashboardOpen);
+  };
+
+  const toggleCompanyManagement = () => {
+    setCompanyManagementOpen(!isCompanyManagementOpen);
+  };
+
+  const toggleStaffManagement = () => {
+    setStaffManagementOpen(!isStaffManagementOpen);
+  }
+
+  const toggleFinanceManagement = () => {
+    setFinanceManagementOpen(!isFinanceManagementOpen);
+  }
+
+  const toggleInventory = () => {
+    setInventory(!isInventory)
+  }
+
+  const toggleService = () => {
+    setService(!isService)
+  }
+
+  const toggleSiteSettings = () => {
+    setSiteSettings(!isSiteSettings)
+  }
+
+  const toggleGlobalSettings = () => {
+    setGlobalSettings(!isGlobalSettings);
+  }
  
-     <div className="sidebar" data-background-color="dark">
-        <div className="sidebar-logo">
-        {/*  */}
-          <div className="logo-header" data-background-color="dark">
-            <a href="" className="logo">
-              <img
-              // 
-                // src={RahatLogo}
-                alt="navbar brand"
-                className="navbar-brand"
-                height="80px"
-              />
-            </a>
-            <div className="nav-toggle">
-              <button className="btn btn-toggle toggle-sidebar">
-                <i className="gg-menu-right"></i>
-              </button>
-              <button className="btn btn-toggle sidenav-toggler">
-                <i className="gg-menu-left"></i>
-              </button>
-            </div>
-            <button className="topbar-toggler more">
-              <i className="gg-more-vertical-alt"></i>
+  return (
+    <div className="sidebar" data-background-color="dark">
+      <div className="sidebar-logo">
+        <div className="logo-header" data-background-color="dark">
+          <a href="" className="logo">
+            <img
+              src={RahatLogo}
+              alt="navbar brand"
+              className="navbar-brand"
+              height="80px"
+            />
+          </a>
+          <div className="nav-toggle">
+            <button className="btn btn-toggle toggle-sidebar">
+              <i className="gg-menu-right"></i>
+            </button>
+            <button className="btn btn-toggle sidenav-toggler">
+              <i className="gg-menu-left"></i>
             </button>
           </div>
-          {/* <!-- End Logo Header -->   */}
+          <button className="topbar-toggler more">
+            <i className="gg-more-vertical-alt"></i>
+          </button>
         </div>
-        <div className="sidebar-wrapper scrollbar scrollbar-inner">
-          <div className="sidebar-content">
-            <ul className="nav nav-secondary">
-              <li className="nav-item active">
-                <a
-                  data-bs-toggle="collapse"
-                  href="#dashboard"
-                  className="collapsed"
-                  aria-expanded="false"
-                >
-                  <i className="fas fa-home"></i>
-                  <p>Dashboard</p>
-                </a>
-    
-              </li>
-              <li className="nav-item">
-                <a data-bs-toggle="collapse" href="#CM">
-                  <i className="fas fa-layer-group"></i>
-                  <p>Company Management</p>
-                  <span className="caret"></span>
-                </a>
-                <div className="collapse" id="CM">
+      </div>
+      <div className="sidebar-wrapper scrollbar scrollbar-inner">
+        <div className="sidebar-content">
+          <ul className="nav nav-secondary">
+            {/* Dashboard Section */}
+            <li className="nav-item active">
+              <a
+                onClick={toggleDashboard}
+                className={`collapsed ${isDashboardOpen ? 'show' : ''}`}
+                aria-expanded={isDashboardOpen}
+              >
+                <i className="fas fa-home"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+
+            {/* Company Management Section */}
+            <li className="nav-item">
+              <a onClick={toggleCompanyManagement} className={`collapsed ${isCompanyManagementOpen ? 'show' : ''}`}>
+                <i className="fas fa-layer-group"></i>
+                <p>Company Management</p>
+                <span className="caret"></span>
+              </a>
+              {isCompanyManagementOpen && (
+                <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Branches</span>
                       </a>
                     </li>
@@ -64,29 +104,35 @@ const sidebar = () => {
                       </a>
                     </li>
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">GST</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-              </li>
-              <li className="nav-item">
-                <a data-bs-toggle="collapse">
-                  <i className="fas fa-layer-group"></i>
-                  <p>Agent Management</p>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a data-bs-toggle="collapse" href="#staffm">
-                  <i className="fas fa-layer-group"></i>
-                  <p>Staff Management</p>
-                  <span className="caret"></span>
-                </a>
-                <div className="collapse" id="staffm">
+              )}
+            </li>
+
+            {/* Staff Management */}
+            <li className="nav-item">
+              <a data-bs-toggle="collapse">
+                <i className="fas fa-layer-group"></i>
+                <p>Agent Management</p>
+              </a>
+            </li>
+
+            {/* Staff Management */}
+            <li className="nav-item">
+              <a onClick={toggleStaffManagement} className={`collapsed ${isStaffManagementOpen ? 'show' : ''}`}>
+                <i className="fas fa-layer-group"></i>
+                <p>Staff Management</p>
+                <span className="caret"></span>
+              </a>
+              {isStaffManagementOpen && (
+                <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Roles</span>
                       </a>
                     </li>
@@ -102,41 +148,53 @@ const sidebar = () => {
                     </li>
                   </ul>
                 </div>
-              </li>
-              <li className="nav-item">
-                <a data-bs-toggle="collapse">
-                  <i className="fas fa-layer-group"></i>
-                  <p>User Management</p>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a data-bs-toggle="collapse">
-                  <i className="fas fa-layer-group"></i>
-                  <p>CRM Lead / Queries</p>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a data-bs-toggle="collapse">
-                  <i className="fas fa-layer-group"></i>
-                  <p>Booking Management</p>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a data-bs-toggle="collapse">
-                  <i className="fas fa-layer-group"></i>
-                  <p>Payment Management</p>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a data-bs-toggle="collapse" href="#fm">
-                  <i className="fas fa-layer-group"></i>
-                  <p>Finance Management</p>
-                  <span className="caret"></span>
-                </a>
-                <div className="collapse" id="fm">
+              )}
+            </li>
+
+            {/* User Management */}
+            <li className="nav-item">
+              <a data-bs-toggle="collapse">
+                <i className="fas fa-layer-group"></i>
+                <p>User Management</p>
+              </a>
+            </li>
+
+            {/* CRM Lead / Queries Management */}
+            <li className="nav-item">
+              <a data-bs-toggle="collapse">
+                <i className="fas fa-layer-group"></i>
+                <p>CRM Lead / Queries</p>
+              </a>
+            </li>
+
+            {/*Booking Management */}
+            <li className="nav-item">
+              <a data-bs-toggle="collapse">
+                <i className="fas fa-layer-group"></i>
+                <p>Booking Management</p>
+              </a>
+            </li>
+
+            {/*Payment Management */}
+            <li className="nav-item">
+              <a data-bs-toggle="collapse">
+                <i className="fas fa-layer-group"></i>
+                <p>Payment Management</p>
+              </a>
+            </li>
+
+            {/* Finance Management */}
+            <li className="nav-item">
+              <a onClick={toggleFinanceManagement} className={`collapsed ${isFinanceManagementOpen ? 'show' : ''}`}>
+                <i className="fas fa-layer-group"></i>
+                <p>Finance Management</p>
+                <span className="caret"></span>
+              </a>
+              {isFinanceManagementOpen && (
+                <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Wallet Management</span>
                       </a>
                     </li>
@@ -147,17 +205,21 @@ const sidebar = () => {
                     </li>
                   </ul>
                 </div>
-              </li>
-              <li className="nav-item">
-                <a data-bs-toggle="collapse" href="#INVENTORY">
-                  <i className="fas fa-layer-group"></i>
-                  <p>Inventory</p>
-                  <span className="caret"></span>
-                </a>
-                <div className="collapse" id="INVENTORY">
+              )}
+            </li>
+
+            {/* Inventory */}
+            <li className="nav-item">
+              <a onClick={toggleInventory} className={`collapsed ${isInventory ? 'show' : ''}`}>
+                <i className="fas fa-layer-group"></i>
+                <p>Inventory</p>
+                <span className="caret"></span>
+              </a>
+              {isInventory && (
+                <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Package management</span>
                       </a>
                     </li>
@@ -167,23 +229,22 @@ const sidebar = () => {
                       </a>
                     </li>
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Holidays Management</span>
                       </a>
                     </li>
                     <li>
                       <a>
-                        <span className="sub-item">PNR Management</span>
+                        <span className="sub-item">PNR  Management</span>
                       </a>
                     </li>
-                    
                     <li>
                       <a>
                         <span className="sub-item">Transport</span>
                       </a>
                     </li>
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Catering</span>
                       </a>
                     </li>
@@ -199,18 +260,21 @@ const sidebar = () => {
                     </li>
                   </ul>
                 </div>
-              </li>
+              )}
+            </li>
 
-              <li className="nav-item">
-                <a data-bs-toggle="collapse" href="#service">
-                  <i className="fas fa-layer-group"></i>
-                  <p>Services</p>
-                  <span className="caret"></span>
-                </a>
-                <div className="collapse" id="service">
+            {/* Services */}
+            <li className="nav-item">
+              <a onClick={toggleService} className={`collapsed ${isService ? 'show' : ''}`}>
+                <i className="fas fa-layer-group"></i>
+                <p>Services</p>
+                <span className="caret"></span>
+              </a>
+              {isService && (
+                <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Laundry</span>
                       </a>
                     </li>
@@ -220,7 +284,7 @@ const sidebar = () => {
                       </a>
                     </li>
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Publications</span>
                       </a>
                     </li>
@@ -229,31 +293,33 @@ const sidebar = () => {
                         <span className="sub-item">Guide & Assistant</span>
                       </a>
                     </li>
-                    
                     <li>
                       <a>
                         <span className="sub-item">Shopping</span>
                       </a>
                     </li>
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Hajj Umrah Kit</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-              </li>
+              )}
+            </li>
 
-              <li className="nav-item">
-                <a data-bs-toggle="collapse" href="#ss">
-                  <i className="fas fa-layer-group"></i>
-                  <p>Site Settings</p>
-                  <span className="caret"></span>
-                </a>
-                <div className="collapse" id="ss">
+            {/* Site Settings */}
+            <li className="nav-item">
+              <a onClick={toggleSiteSettings} className={`collapsed ${isSiteSettings ? 'show' : ''}`}>
+                <i className="fas fa-layer-group"></i>
+                <p>Site Settings</p>
+                <span className="caret"></span>
+              </a>
+              {isSiteSettings && (
+                <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Awards</span>
                       </a>
                     </li>
@@ -263,7 +329,7 @@ const sidebar = () => {
                       </a>
                     </li>
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Events</span>
                       </a>
                     </li>
@@ -272,14 +338,13 @@ const sidebar = () => {
                         <span className="sub-item">Blog</span>
                       </a>
                     </li>
-                    
                     <li>
                       <a>
                         <span className="sub-item">Manage Cities</span>
                       </a>
                     </li>
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">Manage Package Includes</span>
                       </a>
                     </li>
@@ -288,7 +353,6 @@ const sidebar = () => {
                         <span className="sub-item">FAQ</span>
                       </a>
                     </li>
-                    
                     <li>
                       <a>
                         <span className="sub-item">Site Fee</span>
@@ -311,17 +375,18 @@ const sidebar = () => {
                     </li>
                   </ul>
                 </div>
-              </li>
+              )}
+            </li>
 
-
-
-              <li className="nav-item">
+            {/* Reports */}
+            <li className="nav-item">
                 <a data-bs-toggle="collapse">
                   <i className="fas fa-layer-group"></i>
                   <p>Reports</p>
                 </a>
               </li>
 
+              {/* Downloads */}
               <li className="nav-item">
                 <a data-bs-toggle="collapse">
                   <i className="fas fa-layer-group"></i>
@@ -329,6 +394,7 @@ const sidebar = () => {
                 </a>
               </li>
 
+              {/* Flyers */}
               <li className="nav-item">
                 <a data-bs-toggle="collapse">
                   <i className="fas fa-layer-group"></i>
@@ -336,16 +402,18 @@ const sidebar = () => {
                 </a>
               </li>
 
-              <li className="nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarLayouts">
-                  <i className="fas fa-th-list"></i>
-                  <p>Global Settings</p>
-                  <span className="caret"></span>
-                </a>
-                <div className="collapse" id="sidebarLayouts">
+            {/* Global Settings */}
+            <li className="nav-item">
+              <a onClick={toggleGlobalSettings} className={`collapsed ${isGlobalSettings ? 'show' : ''}`}>
+                <i className="fas fa-layer-group"></i>
+                <p>Global Settings</p>
+                <span className="caret"></span>
+              </a>
+              {isGlobalSettings && (
+                <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">IMAGE API</span>
                       </a>
                     </li>
@@ -355,7 +423,7 @@ const sidebar = () => {
                       </a>
                     </li>
                     <li>
-                      <a >
+                      <a>
                         <span className="sub-item">TRIPJACK API</span>
                       </a>
                     </li>
@@ -371,13 +439,13 @@ const sidebar = () => {
                     </li>
                   </ul>
                 </div>
-              </li>
-            </ul>
-          </div>
+              )}
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
+  );
+};
 
-  )
-}
-
-export default sidebar
+export default Sidebar; // <-- Make sure export name matches the component name

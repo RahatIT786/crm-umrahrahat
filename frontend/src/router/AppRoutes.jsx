@@ -9,11 +9,10 @@ const AppRoutes = () => {
    <BrowserRouter>
         <Routes>
             <Route path="/" element={<AppLayout />}>
-                <Route index element={<Home />} />  {/* Default Route (Home) */}
+                <Route index element={<Home />} />
                 <Route path="about" element={<About />} />
             </Route>
         </Routes>
-       
    </BrowserRouter>
   )
 }

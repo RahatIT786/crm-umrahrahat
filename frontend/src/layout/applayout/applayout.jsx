@@ -6,8 +6,6 @@ import { Outlet } from 'react-router-dom';
 const applayout = () => {
   return (
    <div className='wrapper'>
-    
-  
      <Sidebar/>
     <div className='main-panel'>
         <div className='main-header'>
@@ -36,7 +34,7 @@ const applayout = () => {
             </div>
             {/* <!-- End Logo Header --> */}
           </div>
-
+          
         </div>
 
         <Outlet />
