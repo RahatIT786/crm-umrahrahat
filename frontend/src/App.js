@@ -2,6 +2,11 @@ import './App.css';
 import AppRoutes from './router/AppRoutes';
 import React,{useEffect} from 'react';
 import WebFont from 'webfontloader';
+
+
+
+
+
 function App() {
 
   useEffect(()=>{
@@ -21,7 +26,27 @@ function App() {
         sessionStorage.fonts = true;
       },
     });
+
+
+    // Fix: Initialize window.Pusher and window.Echo
+    
+
+    // Debugging: Log Echo object to verify it's initialized
+     // This should print an instance of Echo
+
+    // Listen for events if Echo is initialized
+   
+
+
+
+
+
+
+
+
+
   },[]);
+
   return  <AppRoutes />;
 }
 

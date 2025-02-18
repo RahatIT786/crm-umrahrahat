@@ -9,3 +9,5 @@ Route::get('/', function () {
 
 
 Route::get('/api/packages', [PackageController::class, 'index']);
+
+Route::post('/api/departure-city',[PackageController::class,'store']);
