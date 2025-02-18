@@ -1,13 +1,11 @@
 import React from 'react';
 import Header from '../header/Header';
-import Sidebar from '../sidebar/sidebar';
+import Sidebar from '../sidebar/Sidebar';
 import { Outlet } from 'react-router-dom';
 
 const applayout = () => {
   return (
    <div className='wrapper'>
-    
-  
      <Sidebar/>
     <div className='main-panel'>
         <div className='main-header'>
@@ -36,7 +34,7 @@ const applayout = () => {
             </div>
             {/* <!-- End Logo Header --> */}
           </div>
-
+          
         </div>
 
         <Outlet />
