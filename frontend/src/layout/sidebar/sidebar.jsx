@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import RahatLogo from '../../assets/img/rahat_logo.png';
+import { Link, useLocation } from 'react-router-dom'; 
 
 const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
   // State to manage the collapse of sections
+
+  const location = useLocation();
+  const isActive = (route) => location.pathname.includes(route);
+
+
   const [isDashboardOpen, setDashboardOpen] = useState(false);
   const [isCompanyManagementOpen, setCompanyManagementOpen] = useState(false);
   const [isStaffManagementOpen, setStaffManagementOpen] = useState(false);
@@ -84,17 +90,17 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
             </li>
 
             {/* Company Management Section */}
-            <li className="nav-item">
+            <li className={`nav-item ${isActive('company_management') ? 'active' : ''}`}>
               <a onClick={toggleCompanyManagement} className={`collapsed ${isCompanyManagementOpen ? 'show' : ''}`}>
                 <i className="fas fa-layer-group"></i>
                 <p>Company Management</p>
                 <span className="caret"></span>
               </a>
-              {isCompanyManagementOpen && (
+              { (isCompanyManagementOpen || (isActive('company_management'))) && (
                 <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a>
+                      <a href='/company_management/branch'>
                         <span className="sub-item">Branches</span>
                       </a>
                     </li>
@@ -113,7 +119,7 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
               )}
             </li>
 
-            {/* Staff Management */}
+            {/* Agent Management */}
             <li className="nav-item">
               <a data-bs-toggle="collapse">
                 <i className="fas fa-layer-group"></i>
@@ -386,21 +392,21 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
                 </a>
               </li>
 
-              {/* Downloads */}
-              <li className="nav-item">
+            {/* Downloads */}
+            <li className="nav-item">
                 <a data-bs-toggle="collapse">
                   <i className="fas fa-layer-group"></i>
                   <p>Downloads</p>
                 </a>
-              </li>
+            </li>
 
-              {/* Flyers */}
-              <li className="nav-item">
+            {/* Flyers */}
+            <li className="nav-item">
                 <a data-bs-toggle="collapse">
                   <i className="fas fa-layer-group"></i>
                   <p>Flyers</p>
                 </a>
-              </li>
+            </li>
 
             {/* Global Settings */}
             <li className="nav-item">
