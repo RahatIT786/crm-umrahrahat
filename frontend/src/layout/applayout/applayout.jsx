@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from '../sidebar/Sidebar';
+import Sidebar from '../sidebar/sidebar';
 
 import Header from '../header/Header';
 
@@ -11,7 +11,7 @@ const applayout = () => {
      <Sidebar/>
     <div className='main-panel'>
         <div className='main-header'>
-        <div className="main-header-logo">
+        <div className="main-header-logo">s
             {/* <!-- Logo Header --> */}
             <div className="logo-header" data-background-color="dark">
               <a href="index.html" className="logo">
@@ -38,8 +38,13 @@ const applayout = () => {
           </div>
           
         </div>
+        <div className="container">
+          <div className="page-inner">
+          <Outlet />
+          </div>
 
-        <Outlet />
+        </div>
+        
 
         <footer/>
        
