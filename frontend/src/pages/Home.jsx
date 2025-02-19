@@ -7,7 +7,7 @@ import TestForm from './TestForm.jsx';
 
 import Swal from 'sweetalert2';
 
-
+import Role from './staff_management/Role.jsx';
 
 const Home = () => {
 
@@ -22,14 +22,13 @@ const Home = () => {
 
 
   return (
-    <div className="container">
-
-          <div className="page-inner">
-            <div
-              className="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
-            >
+   
+           
+       <div>
+                
+            <div className="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
               <div>
-                <h3 className="fw-bold mb-3">Dashboard</h3>
+                <h3 className="fw-bold mb-3"><a href="/dashboard">Dashboard</a></h3>
                
               </div>
               <div className="ms-md-auto py-2 py-md-0">
@@ -45,25 +44,16 @@ const Home = () => {
             </div>
             
           <div>
-            <TestForm/>
-            <PackageList/>
+            <Role/>
           </div>
        
 
+       </div>  
+
            
 
-          </div>
-        </div>
-        <div className="row">
-          <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-          <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-          <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-          <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-        </div>
-        <div>
-        </div>
-      </div>
-    </div>
+       
+     
   );
 }
 

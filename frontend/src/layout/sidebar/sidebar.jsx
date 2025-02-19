@@ -79,14 +79,16 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
           <ul className="nav nav-secondary">
             {/* Dashboard Section */}
             <li className="nav-item active">
-              <a
+              <Link
                 onClick={toggleDashboard}
                 className={`collapsed ${isDashboardOpen ? 'show' : ''}`}
                 aria-expanded={isDashboardOpen}
+                to={'/dashboard'}
+                
               >
                 <i className="fas fa-home"></i>
                 <p>Dashboard</p>
-              </a>
+              </Link>
             </li>
 
             {/* Company Management Section */}
@@ -100,9 +102,9 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
                 <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a href='/company_management/branch'>
+                      <Link to="/company_management/branch">
                         <span className="sub-item">Branches</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a>
@@ -138,9 +140,9 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
                 <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a>
-                        <span className="sub-item">Roles</span>
-                      </a>
+                      <Link to="/staff_management/role">
+                        <span className="sub-item">Role</span>
+                      </Link>
                     </li>
                     <li>
                       <a>
