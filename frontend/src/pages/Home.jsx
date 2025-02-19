@@ -43,27 +43,8 @@ const Home = () => {
               <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
               <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
             </div>
-            
-          <div>
-            <TestForm/>
-            <PackageList/>
-          </div>
-       
-
-           
-
           </div>
         </div>
-        <div className="row">
-          <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-          <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-          <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-          <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-        </div>
-        <div>
-        </div>
-      </div>
-    </div>
   );
 }
 
