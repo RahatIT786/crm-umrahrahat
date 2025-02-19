@@ -1,6 +1,7 @@
 import React from 'react'
 import CountLabel from '../components/ui/CountLabel';
-
+import PackageList from './PackageList.jsx';
+import TestForm from './TestForm.jsx';
 const Home = () => {
   return (
     <div className="container">
@@ -24,7 +25,10 @@ const Home = () => {
               <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
             </div>
             
-          
+          <div>
+            <TestForm/>
+            <PackageList/>
+          </div>
        
 
            
