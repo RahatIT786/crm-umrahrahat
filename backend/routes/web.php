@@ -16,6 +16,9 @@ Route::get('/api/packages', [PackageController::class, 'index']);
 Route::post('/api/city',[PackageController::class,'store']);
 
 Route::post('/api/createrole',[RoleController::class,'createRole']);
+Route::get('/optimize' ,[PackageController::class,'clearCache']);
+Route::get('/migrate' ,[PackageController::class,'migrate']);
+
 
 Route::middleware('api.key')->post('/departure-city',
     function(Request $request){

@@ -14,4 +14,7 @@ class RoleRepo
     public function createRole(array $data){
         return Role::create($data );
     }
+
+
+    
 }
