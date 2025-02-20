@@ -145,9 +145,9 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
                       </Link>
                     </li>
                     <li>
-                      <a>
+                      <Link to='/staff_management/department'>
                         <span className="sub-item">Department</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a>

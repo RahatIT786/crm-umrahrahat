@@ -1,6 +1,7 @@
 
 import React from 'react';
 import CountLabel from '../components/ui/CountLabel';
+import TwoFieldForm from '../components/ui/form/TwoFieldForm';
 
 const Home = () => {
 
@@ -20,11 +21,15 @@ const Home = () => {
               </div>
             </div>
             <div className="row">
-              <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-              <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-              <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
-              <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
+              <CountLabel icon="fa-check-circle" category="SignUp" value="23" color='icon-primary' />
+              <CountLabel icon="fa-users" category="SignUp" value="23" color='icon-info' />
+              <CountLabel icon="fa-luggage-cart" category="SignUp" value="23" />
+              <CountLabel icon="fa-check-circle" category="SignUp" value="23" color='icon-secondary' />
             </div>
+
+           <div>
+                <TwoFieldForm apiUrl={'/api/createrole/'} />
+           </div>
 
        </div> 
      
