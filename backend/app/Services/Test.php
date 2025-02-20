@@ -1,7 +1,7 @@
 <?php 
 namespace App\Services;
 
-use App\Repositary\TestRepo;
+use App\Repositories\TestRepo;
 
 class Test{
     protected $testRepo;

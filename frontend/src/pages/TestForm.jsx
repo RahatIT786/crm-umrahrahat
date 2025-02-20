@@ -26,7 +26,7 @@ const TestForm=()=>{
 
         try{
             const response =await axios.post(
-                '/api/departure-city',
+                '/api/city',
               
                 {
                 name:cityName,

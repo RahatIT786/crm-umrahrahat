@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use App\Interface\TestInterface;
-use App\Repositary\TestRepo;
+use App\Repositories\staff_management\RoleRepo;
+use App\Repositories\TestRepo;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(TestInterface::class,TestRepo::class);
+        Log::info('Binding TestRepo');
+        $this->app->bind(TestRepo::class);
+    
+        Log::info('Binding RoleRepo');
+        $this->app->bind(RoleRepo::class);
     }
 
     /**
