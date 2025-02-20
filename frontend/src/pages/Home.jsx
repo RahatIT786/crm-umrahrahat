@@ -2,24 +2,7 @@
 import React from 'react';
 import CountLabel from '../components/ui/CountLabel';
 
-import PackageList from './PackageList.jsx';
-import TestForm from './TestForm.jsx';
-
-import Swal from 'sweetalert2';
-
-import Role from './staff_management/Role.jsx';
-
 const Home = () => {
-
-  const showAlert = () => {
-    Swal.fire({
-      title: 'Success!',
-      text: 'You clicked the button!',
-      icon: 'success',
-      confirmButtonText: 'OK'
-    });
-  };
-
 
   return (
    
@@ -43,20 +26,7 @@ const Home = () => {
               <CountLabel icon="fa-check-circle" category="SignUp" value="23" />
             </div>
 
-            
-          <div>
-            <Role/>
-          </div>
-          <PackageList/>
-          <TestForm/>
-       
-
-
-       </div>  
-
-           
-
-       
+       </div> 
      
   );
 }

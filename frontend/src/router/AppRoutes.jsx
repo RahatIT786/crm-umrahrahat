@@ -9,6 +9,11 @@ import Branches from '../pages/company_management/Branches'
 import BranchesForm from '../pages/company_management/BranchesForm'
 import Role from '../pages/staff_management/Role'
 
+//Inventory Management
+import PackageComponent from '../pages/inventory_management/package_management/PackageComponent'
+import PackageForm from '../pages/inventory_management/package_management/PackageForm';
+
+
 const AppRoutes = () => {
   return (
    <BrowserRouter>
@@ -24,6 +29,10 @@ const AppRoutes = () => {
 
                 {/* Staff Management Routes */}
                 <Route path='/staff_management/role' element={<Role/>} />
+
+                {/* Inventory Management */}
+                <Route path="/inventory_management/packages" element={<PackageComponent />} />
+                <Route path="/inventory_management/add_packages" element={<PackageForm />} />
             </Route>
         </Routes>
    </BrowserRouter>

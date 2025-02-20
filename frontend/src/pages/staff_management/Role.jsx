@@ -18,21 +18,19 @@ const Role = () => {
 
 
   return (
+    <div>
+        <TwoFieldForm
+        title='Staff Role Table'
+        apiUrl='/api/createrole'
+        inputProps={{
+            placeholder:'Enter Role '
+            
+        }}
+      />
 
+      {/* <TestForm/> */}
 
- <div>
-    <TwoFieldForm
-    title='Staff Role Table'
-    apiUrl='/api/createrole'
-    inputProps={{
-        placeholder:'Enter Role '
-        
-    }}
-   />
-
-   {/* <TestForm/> */}
-
- </div>
+    </div>
   );
 }
 
