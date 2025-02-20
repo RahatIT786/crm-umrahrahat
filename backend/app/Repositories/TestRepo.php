@@ -1,10 +1,10 @@
 <?php
-namespace App\Repositary;
+namespace App\Repositories;
 
-use App\Interface\TestInterface;
+use App\Interfaces\TestInterface;
 use App\Models\DepartureCity;
 
-class TestRepo implements TestInterface
+class TestRepo 
 {
     public function getAll(){
         return DepartureCity::where('delete_status',1)->get();

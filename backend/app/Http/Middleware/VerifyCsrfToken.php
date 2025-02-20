@@ -9,8 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class VerifyCsrfToken extends MiddlewareVerifyCsrfToken
 {
-    protected $except=[
-            'api/*',
-    ];
+    // protected $except=[
+    //         'api/*',
+    // ];
  
 }
