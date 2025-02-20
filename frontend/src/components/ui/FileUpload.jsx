@@ -1,25 +1,32 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
-const VisuallyHiddenInput = styled('input')({
-  clip: 'rect(0 0 0 0)',
-  clipPath: 'inset(50%)',
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
   height: 1,
-  overflow: 'hidden',
-  position: 'absolute',
+  overflow: "hidden",
+  position: "absolute",
   bottom: 0,
   left: 0,
-  whiteSpace: 'nowrap',
+  whiteSpace: "nowrap",
   width: 1,
 });
 
-const FileUpload = ({ onChange, label = 'Upload files', accept = '', multiple = true }) => {
+const FileUpload = ({
+  onChange,
+  label = "Upload files",
+  accept = "",
+  multiple = true,
+  width = "auto",
+  height = "40px",
+}) => {
   const handleFileChange = (event) => {
     const files = event.target.files;
     if (onChange) {
-      onChange(files);  // Pass the selected files to the parent component
+      onChange(files); // Pass selected files to parent component
     } else {
       console.log(files); // Fallback if no onChange handler is passed
     }
@@ -30,7 +37,11 @@ const FileUpload = ({ onChange, label = 'Upload files', accept = '', multiple = 
       component="label"
       variant="contained"
       startIcon={<CloudUploadIcon />}
-      sx={{ textTransform: 'none' }}
+      sx={{
+        textTransform: "none",
+        width: width,
+        height: height,
+      }}
     >
       {label}
       <VisuallyHiddenInput
@@ -44,3 +55,4 @@ const FileUpload = ({ onChange, label = 'Upload files', accept = '', multiple = 
 };
 
 export default FileUpload;
+

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import InputBox from '../../components/ui/InputBox';
 import ButtonComponent from '../../components/ui/Button';
+import axios from 'axios'   
+
+const csrfToken=document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 const BranchesForm = () => {
+
     const [branchName, setBranchName] = useState('');
     const [branchAddress, setBranchAddress] = useState('');
     const [branchManagerName, setBranchManagerName] = useState('');
@@ -12,6 +16,8 @@ const BranchesForm = () => {
     const [branchImage, setBranchImage] = useState(null);
     const [contactNumber1, setContactNumber1] = useState('');
     const [contactNumber2, setContactNumber2] = useState('');
+
+    console.log("your csrf: ",csrfToken);
 
     // Validation states
     const [errors, setErrors] = useState({});
@@ -47,7 +53,7 @@ const BranchesForm = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         if (!validateForm()) return;
 
@@ -62,6 +68,26 @@ const BranchesForm = () => {
             contactNumber1,
             contactNumber2,
         });
+
+        try{
+            const response =await axios.post('/api/company-management/branches',
+                {
+                    branchName: branchName,
+                    branchAddress: branchAddress,
+                    branchManagerName: branchManagerName,
+                    branchState: branchState,
+                    branchState: branchState,
+                    branchDistrict: branchDistrict,
+                    branchPinCode: branchPinCode,
+                    branchImage: branchImage,
+                    contactNumber1: contactNumber1,
+                    contactNumber2: contactNumber2
+                },
+            );
+            console.log('Data sent Successfully :',response.data);
+        }catch(error){
+            console.error('Error sending Data: ',error);
+        }
 
         alert("Branch details submitted successfully!");
     };

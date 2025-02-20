@@ -103,7 +103,7 @@ const Role = () => {
 
   return (
   <section className='d-flex justify-content-center mt-5'>
-          <div className="col-md-6">
+    <div className="col-md-6">
     <div className="card">
       <div className="card-header">
         <div className="card-title">Staff Role Table</div>

@@ -227,9 +227,9 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
                 <div className="collapse show">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a>
+                      <Link to='/inventory_management/packages'>
                         <span className="sub-item">Package management</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a>
