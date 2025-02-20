@@ -123,10 +123,11 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'providers' => [
+//     'providers' => [
     
-    App\Providers\AppServiceProvider::class,
-],
+//     App\Providers\AppServiceProvider::class,
+
+// ],
 
 
 ];
