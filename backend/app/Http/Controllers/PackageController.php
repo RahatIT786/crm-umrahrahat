@@ -6,6 +6,7 @@ use App\Events\DataStored;
 use App\Models\DepartureCity;
 use App\Services\Test;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class PackageController extends Controller
 {
@@ -50,5 +51,28 @@ class PackageController extends Controller
             ]);
     
 
+        }
+
+        public function clearCache(){
+            Artisan::call('optimize');
+            return "DEAR ADMIN YOUR APPLICATION CACHES ARE CLEARED !";
+        }
+    
+        public function migrate(){
+            try {
+                // Capture the output from the Artisan command
+                Artisan::call('migrate', ['--force' => true]); // '--force' to run without confirmation in production
+        
+                // Get the output as a string
+                $outputString = Artisan::output();
+        
+                // Return the output to the view or as a response
+                // return response()->json(['status' => 'success', 'message' => $outputString]);
+                return $outputString;
+            } catch (\Exception $e) {
+                // Catch any errors and return them
+               return $e->getMessage();
+                // return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
+            }
         }
 }
