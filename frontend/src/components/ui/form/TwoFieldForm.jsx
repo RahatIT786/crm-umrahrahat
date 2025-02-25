@@ -63,7 +63,7 @@ const TwoFieldForm = ({
       setError("Enter the Role");
       return;
     }
-    
+    await axios.get('/sanctum/csrf-cookie');
     try{
 
         const response=await axios.post(

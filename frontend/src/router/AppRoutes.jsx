@@ -16,6 +16,11 @@ import PackageForm from '../pages/inventory_management/package_management/packag
 //Staff Management
 import Role from '../pages/staff_management/Role'
 import Department from '../pages/staff_management/Department'
+
+//PNR Management
+import PnrList from '../pages/pnr_management/PnrList'
+import PnrFormPopup from '../pages/pnr_management/PnrFormPopup'
+import BookingList from '../pages/pnr_management/BookingList'
 const AppRoutes = () => {
   return (
    <BrowserRouter>
@@ -38,6 +43,12 @@ const AppRoutes = () => {
                 {/* Inventory Management */}
                 <Route path="/inventory_management/packages" element={<PackageComponent />} />
                 <Route path="/inventory_management/add_packages" element={<PackageForm />} />
+
+
+                {/* PNR MANAGEMENT */}
+                <Route path="/pnr_management/pnr_list" element={<PnrList />} />
+                <Route path="/pnr_management/pnr_form" element={<PnrFormPopup />} />
+                <Route path='/pnr_management/booking_list' element={<BookingList />} />
             </Route>
         </Routes>
    </BrowserRouter>

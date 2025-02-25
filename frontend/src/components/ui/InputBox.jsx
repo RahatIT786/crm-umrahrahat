@@ -7,7 +7,8 @@ const DynamicInputField = ({
   type = 'text',             
   placeholder = '',         
   value,                    
-  onChange,                
+  onChange,
+               
   id,                       
   name,                     
   className = '',           
@@ -24,7 +25,8 @@ const DynamicInputField = ({
       className={className}    
       label={label}            
       variant="outlined"       
-      fullWidth                
+      fullWidth  
+     
     />
   );
 };
