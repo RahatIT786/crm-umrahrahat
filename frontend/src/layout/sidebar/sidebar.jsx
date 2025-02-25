@@ -14,6 +14,7 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
   const [isStaffManagementOpen, setStaffManagementOpen] = useState(false);
   const [isFinanceManagementOpen, setFinanceManagementOpen] = useState(false);
   const [isInventory, setInventory] = useState(false);
+  const [isPNR, setPNR] = useState(false);
   const [isService, setService] = useState(false);
   const [isSiteSettings, setSiteSettings] = useState(false);
   const [isGlobalSettings, setGlobalSettings] = useState(false);
@@ -33,10 +34,13 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
     setFinanceManagementOpen(!isFinanceManagementOpen);
   }
 
+
   const toggleInventory = () => {
     setInventory(!isInventory)
   }
-
+ const togglePNRManagement = () => {
+    setPNR(!isPNR);
+  }
   const toggleService = () => {
     setService(!isService)
   }
@@ -242,9 +246,31 @@ const Sidebar = () => { // <-- Change to uppercase 'Sidebar'
                       </a>
                     </li>
                     <li>
-                      <a>
+                    <a onClick={togglePNRManagement} className={`collapsed ${isPNR ? 'show' : ''}`}>
+                <i className="fas fa-layer-group"></i>
+                <p>PNR Management</p>
+                <span className="caret"></span>
+              </a>
+              {isPNR && (
+                <div className="collapse show">
+                  <ul className="nav nav-collapse">
+                    <li>
+                      <Link to='/pnr_management/pnr_list'>
+                        <span className="sub-item">PNR List</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to='/pnr_management/booking_list'>
+                        <span className="sub-item">PNR Booking List</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+
+                      {/* <a>
                         <span className="sub-item">PNR  Management</span>
-                      </a>
+                      </a> */}
                     </li>
                     <li>
                       <a>
